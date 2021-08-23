@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">taller_1</string>
+    <string name="FIBONACCI">FIBONACCI</string>
+    <string name="taller_1">Taller 1</string>
+    <string name="factorial">Factorial</string>
+    <string name="paises">Paises</string>
+    <string name="hintNumero">0</string>
+</resources>
