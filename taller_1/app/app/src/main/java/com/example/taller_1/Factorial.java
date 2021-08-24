@@ -1,13 +1,9 @@
 package com.example.taller_1;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.TypedArrayUtils;
 
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
-
-import java.util.Vector;
 
 public class Factorial extends AppCompatActivity {
 

@@ -6,24 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".Fibonacci">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="374dp"
-        android:layout_height="584dp"
-        android:contentDescription="@string/FIBONACCI"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fibonacci" />
-
     <TextView
         android:id="@+id/textoFiboPantalla"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imagenBotonFibo" />
+
+    <ImageButton
+        android:id="@+id/imagenBotonFibo"
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fibonacci" />
 </androidx.constraintlayout.widget.ConstraintLayout>
