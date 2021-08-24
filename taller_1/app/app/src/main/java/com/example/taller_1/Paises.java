@@ -10,13 +10,19 @@ import java.io.UnsupportedEncodingException;
 
 import android.os.Bundle;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class Paises extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paises);
-
+/*
+        JSONObject json = new JSONObject(cargarJson());
+        JSONArray paisesJsonArray = json.getJSONArray("paises");
+*/
     }
     public String cargarJson() throws UnsupportedEncodingException {
         String json = null;

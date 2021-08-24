@@ -10,10 +10,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -24,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
     EditText numeroPantallaFactorial;
     Button bPaises;
     Spinner pSpinner;
+    //contador fibonacci y factorial
+    int contadorFibonacci = 0;
+    int contadorFactorial = 0;
+    String horaUltimo = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         bPaises = findViewById(R.id.boton_paises);
         pSpinner = findViewById(R.id.spinnerPantalla);
 
+
         bFibonacci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent pantallaFibo = new Intent(v.getContext(), Fibonacci.class);
                 pantallaFibo.putExtra("valorNumero", valorSpinner);
                 startActivity(pantallaFibo);
+                contadorFibonacci +=1;
+                Date horaActual = new Date();
+                SimpleDateFormat horaFormato = new SimpleDateFormat("hh:mm:ss");
+                horaUltimo = horaFormato.format(horaActual);
             }
         });
 
@@ -55,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(v.getContext(), Factorial.class);
                 intent.putExtra("numero", valorFactorial);
                 startActivity(intent);
+                contadorFactorial +=1;
+                Date horaActual = new Date();
+                SimpleDateFormat horaFormato = new SimpleDateFormat("hh:mm:ss");
+                horaUltimo = horaFormato.format(horaActual);
             }
         });
 
@@ -67,5 +83,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String cadenaToast = "Fibonacci: " + String.valueOf(contadorFibonacci) + "\nFactorial: " + String.valueOf(contadorFactorial) + "\n" +horaUltimo;
+        Toast.makeText(this,cadenaToast , Toast.LENGTH_SHORT).show();
     }
 }
