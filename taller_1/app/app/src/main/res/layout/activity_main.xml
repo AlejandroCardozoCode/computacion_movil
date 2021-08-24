@@ -45,7 +45,7 @@
         app:cornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerPantalla" />
+        app:layout_constraintTop_toBottomOf="@+id/numeroInputFactorial" />
 
     <Button
         android:id="@+id/boton_paises"
@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numeroInputFactorial" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerPantalla" />
 
     <Spinner
         android:id="@+id/spinnerPantalla"
@@ -71,8 +71,9 @@
         android:layout_marginEnd="40dp"
         android:entries="@array/arregloNumeros"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_fibonacci" />
+        app:layout_constraintTop_toBottomOf="@+id/boton_factorial" />
 
     <EditText
         android:id="@+id/numeroInputFactorial"
@@ -84,8 +85,9 @@
         android:hint="@string/hintNumero"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_factorial" />
+        app:layout_constraintTop_toBottomOf="@+id/boton_fibonacci" />
 
     <TextView
         android:id="@+id/textView2"

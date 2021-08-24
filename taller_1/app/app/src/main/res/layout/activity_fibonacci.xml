@@ -6,28 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".Fibonacci">
 
-    <TextView
-        android:id="@+id/textoFiboPantalla"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenBotonFibo" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/imagenBotonFibo"
-        android:layout_width="300dp"
-        android:layout_height="400dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fibonacci" />
+        <ImageButton
+            android:id="@+id/imagenBotonFibo"
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/fibonacci" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/textoFiboPantalla"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView" />
+        </ScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

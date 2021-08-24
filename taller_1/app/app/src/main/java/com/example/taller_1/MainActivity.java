@@ -6,19 +6,12 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.google.android.material.textfield.TextInputEditText;
-
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,11 +38,16 @@ public class MainActivity extends AppCompatActivity {
         bPaises = findViewById(R.id.boton_paises);
         pSpinner = findViewById(R.id.spinnerPantalla);
 
-
+        //llamado a la pantalla de fibonacci
         bFibonacci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String valorSpinner = (String)pSpinner.getSelectedItem();
+                String valorSpinner = numeroPantallaFactorial.getText().toString();
+                if(valorSpinner.equals(""))
+                {
+                    Toast.makeText(v.getContext(),"No se ha ingresado un valor" , Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Intent pantallaFibo = new Intent(v.getContext(), Fibonacci.class);
                 pantallaFibo.putExtra("valorNumero", valorSpinner);
                 startActivity(pantallaFibo);
@@ -59,13 +57,14 @@ public class MainActivity extends AppCompatActivity {
                 horaUltimo = horaFormato.format(horaActual);
             }
         });
-
+        //llamado a la pantalla de factorial
         bFactorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int valorFactorial = Integer.parseInt(numeroPantallaFactorial.getText().toString());
+                String valorFactorial = (String)pSpinner.getSelectedItem();
+                int valorEntero = Integer.parseInt(valorFactorial);
                 Intent intent = new Intent(v.getContext(), Factorial.class);
-                intent.putExtra("numero", valorFactorial);
+                intent.putExtra("numero", valorEntero);
                 startActivity(intent);
                 contadorFactorial +=1;
                 Date horaActual = new Date();
@@ -81,13 +80,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onRestart() {
+        super.onRestart();
         String cadenaToast = "Fibonacci: " + String.valueOf(contadorFibonacci) + "\nFactorial: " + String.valueOf(contadorFactorial) + "\n" +horaUltimo;
         Toast.makeText(this,cadenaToast , Toast.LENGTH_SHORT).show();
     }
