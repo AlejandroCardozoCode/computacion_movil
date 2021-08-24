@@ -36,10 +36,10 @@ public class InfoPais extends AppCompatActivity {
         siglaAux = siglaAux.toLowerCase();
         bandera = bandera + siglaAux +".png";
 
-        nombrePais.setText(valorNombrePais);
-        nombreInt.setText(valorInt);
-        capital.setText(valorCapital);
-        sigla.setText(valorSigla);
+        nombrePais.setText("Nombre Pais: " + valorNombrePais);
+        nombreInt.setText("Nombre Internacional: " + valorInt);
+        capital.setText("Capital: " + valorCapital);
+        sigla.setText("Sigla: " + valorSigla);
         imagen.setWebViewClient(new WebViewClient());
         imagen.setInitialScale((int) (120 * imagen.getScaleY()));
         imagen.loadUrl(bandera);
