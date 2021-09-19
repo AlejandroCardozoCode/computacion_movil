@@ -21,12 +21,24 @@ public class Fibonacci extends AppCompatActivity {
         fibonnacciBoton = findViewById(R.id.imagenBotonFibo);
         //valores en pantalla
         String valorSpinner = getIntent().getStringExtra("valorNumero");
-        int valorNumericoSpinner = Integer.parseInt(valorSpinner);
+        int valorFibo = Integer.parseInt(valorSpinner);
         String cadenaDeValores = "";
+        int a = 0, b = 1, c = 0;
 
-        for(int i = 1; i<=valorNumericoSpinner;i++)
+        if(valorFibo >=2)
         {
-            cadenaDeValores = cadenaDeValores + String.valueOf(i) + "\n";
+            cadenaDeValores = cadenaDeValores + "\n" + 0 + "\n" + 1;
+        }
+        else if (valorFibo == 1)
+        {
+            cadenaDeValores = cadenaDeValores + "\n" + 0 ;
+        }
+        for(int i = 2; i<valorFibo;i++)
+        {
+            c = a + b;
+            cadenaDeValores = cadenaDeValores + "\n"+ String.valueOf(c) ;
+            a = b;
+            b = c;
         }
         textoFibonacci.setText(cadenaDeValores);
 

@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(pantallaFibo);
                 contadorFibonacci +=1;
                 Date horaActual = new Date();
-                SimpleDateFormat horaFormato = new SimpleDateFormat("hh:mm:ss");
+                SimpleDateFormat horaFormato = new SimpleDateFormat("MM-dd hh:mm:ss");
                 horaUltimo = horaFormato.format(horaActual);
             }
         });
@@ -68,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 contadorFactorial +=1;
                 Date horaActual = new Date();
-                SimpleDateFormat horaFormato = new SimpleDateFormat("hh:mm:ss");
+                SimpleDateFormat horaFormato = new SimpleDateFormat("MM-dd hh:mm:ss");
+
                 horaUltimo = horaFormato.format(horaActual);
             }
         });
